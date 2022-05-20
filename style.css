@@ -10,8 +10,8 @@ label {
     position: absolute;
     width: 45px;
     height: 22px;
-    right: 20px;
-    top: 20px;
+    left: 10px;
+    top: 10px;
     border: 2px solid;
     border-radius: 20px;
 }
@@ -36,6 +36,10 @@ body.night{
     background: #000;
     color: #fff;
 }
+.responsive-banner {
+    color: rgb(16, 16, 16);
+    background-image: #fff;
+}
 
 .logo {
     display: flex;
@@ -43,20 +47,26 @@ body.night{
     
 }
 
+.logo img {
+    height: 50px;
+    border-end-start-radius: 0%;
+    top: 30px;
+    right: 97%;
+    z-index: -1;   
+}
+
+.logo span {
+    font-size: x-small;
+    padding-bottom: 5px;
+}
 
 .responsive-banner {
     display: inline-block;
     margin: 50px;
     width: 60em;
-    /* max-width: 490px;
-    min-width: 320px; */
     position: relative;
-    /* min-height: 300px;
-    max-height: 450px; */
     border-radius: 10px;
      width: 60em;
-    /*margin-top: 20px;
-    background: grey; */
     height: 25.5em; 
     overflow: hidden;
     display: flex;
@@ -79,8 +89,8 @@ body.night{
       display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
-    min-height: 300px;
-    max-height: 450px;
+    /* min-height: 300px;
+    max-height: 450px; */
   }
   .col-xs-12 {
     -webkit-box-flex: 0;
@@ -88,9 +98,11 @@ body.night{
       -ms-flex: 0 0 100%;
       flex: 0 0 100%;
       max-width: 100%;
-    -webkit-align-self: flex-end;
+      padding-bottom: 0px;
+      padding-left: 50px;
+    /* -webkit-align-self: flex-end;
               -ms-flex-item-align: end;
-                      align-self: flex-end;
+                      align-self: flex-end; */
   }
   
   @media (min-width: 650px) {
@@ -155,24 +167,25 @@ body.night{
     max-width : 50%;
   }
   .cirle-a {
-    bottom: -80px;
-    left: -80px;
+    bottom: 80px;
+    left: 80px;
   }
   .cirle-b {
-    top: -30px;
+    top: 30px;
     right: 70%;
   }
   .cirle-c {
-    top: -330px;
-    right: -300px;
+    top: 90px;
+    right: 300px;
   }
   .cirle-d {
-    top: 195px;
+    top: 105px;
         right: 145px;
   }
   img {
     top: 0;
     right: 0;
+    border-end-start-radius: 100%;
   }
   
   h1 {
@@ -183,50 +196,134 @@ body.night{
     text-align: center;
   }
   
-  
+ /* ------ */
+
+  .line {
+	margin: 0 0 10px;
+	width: 100%;
+	height: 78px;
+	box-shadow: 10px 10px 10px rgba(0,0,0,0.05);
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 2em;
+	line-height: 78px;
+	transform: skew(0, -5deg);
+}
+
+.line:after,
+.line:first-child:before {
+	position: absolute;
+	top: 44px;
+	left: 0;
+	z-index: -1;
+	display: block;
+	width: 330px;
+	height: 78px;
+	border-radius: 4px;
+	background: rgba(174, 171, 171, 0.8);
+	content: '';
+	transform: skew(0, 15deg);
+}
+
+.line:first-child:before {
+	top: -10px;
+	right: 0;
+	left: auto;
+}
+
+.line:first-child:before,
+.line:last-child:after {
+	width: 0;
+	height: 0;
+	border-width: 38px;
+	border-style: solid;
+	border-color: rgba(180,180,180,0.8) rgba(180,180,180,0.8) transparent transparent;
+	background: transparent;
+}
+
+.line:last-child:after {
+	top: 12px;
+	border-color: transparent transparent rgba(180,180,180,0.8) rgba(180,180,180,0.8);
+}
+
+/* ------  */
+
+.intro h3 {
+    font-size: 1.32em;
+    line-height: 1;
+}
+.intro h3 span:first-of-type {
+    font-weight:19;
+    letter-spacing:0.4px;
+    color: rgb(243, 243, 243);
+    
+}
+.intro h3 span:last-of-type {
+    font-weight: 750;
+    letter-spacing: 1px;
+    font-size: 0.88em;
+    margin-bottom: 0.1em;
+    padding-left: 50px;
+}
+
+.intro {
+    padding-top: 90px;
+}
 
 
-/* 
-.banner {
-    width: 60em;
-    margin-top: 20px;
-    background: grey;
-    height: 25.5em;
-    overflow: hidden;
+/* ------- */
+
+.services ul {
+	
+	width: 2;
+	
+}
+
+
+.services ul li {
+	
+	color: #fff;
+	font-weight: 400;
+	font-size: 0.6em;
+	letter-spacing: 0.28em;
+	margin: 0px 0;
+	
+}
+
+
+.container {
+    padding-top: 50px;
+}
+
+
+.services .left {
+	
+	float: left;
+	
+}
+
+.services .right {
+	
+	float: right;
+	text-align: right;
+	
+}
+
+.services .right li {
     display: flex;
-    justify-content: flex-start;
-    cursor: pointer;
-    border-radius: 0.3em;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
-}
-.crypto-img {
-    height: auto;
-    width: fit-content;
 }
 
-.crypto-img > img {
-    height: 15em;
-    width: 19em;
-    object-fit: cover;
-    border-radius: 0 2em 2em 3em 3em 0;
-    box-shadow: 3px 5px 1px 3px rgb(138, 128, 128); 
+.services .left li {
+    display: flex;
 }
-.cirle-a {
-    bottom: -80px;
-    left: -80px;
-  }
-  .cirle-b {
-    top: -30px;
-    right: 70%;
-  }
-  .cirle-c {
-    top: -330px;
-    right: -300px;
-  }
-  .cirle-d {
-    top: 195px;
-        right: 145px;
-  } */
+.services hr {
+	
+	height: 2px;
+    width: 120px;
+	background-color: #0b0b0a;
+	border: 1px solid #080808;
+
+}
 
 
 
