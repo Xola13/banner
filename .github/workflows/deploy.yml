@@ -22,29 +22,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./path/to/your/banner
-
-      - name: Notify on failure
-        if: failure()
-        uses: dawidd6/action-send-mail@v3
-        with:
-          server_address: ${{ secrets.SMTP_SERVER }}
-          server_port: ${{ secrets.SMTP_PORT }}
-          username: ${{ secrets.SMTP_USERNAME }}
-          password: ${{ secrets.SMTP_PASSWORD }}
-          subject: 'Deployment Failed'
-          body: 'Deployment failed for branch `${{ github.ref }}`. Check the logs for more details.'
-          to: ${{ secrets.EMAIL_TO }}
-          from: ${{ secrets.SMTP_USERNAME }}
-
-      - name: Notify on success
-        if: success()
-        uses: dawidd6/action-send-mail@v3
-        with:
-          server_address: ${{ secrets.SMTP_SERVER }}
-          server_port: ${{ secrets.SMTP_PORT }}
-          username: ${{ secrets.SMTP_USERNAME }}
-          password: ${{ secrets.SMTP_PASSWORD }}
-          subject: 'Deployment Succeeded'
-          body: 'Deployment succeeded for branch `${{ github.ref }}`.'
-          to: ${{ secrets.EMAIL_TO }}
-          from: ${{ secrets.SMTP_USERNAME }}
