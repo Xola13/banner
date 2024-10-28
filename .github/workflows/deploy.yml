@@ -3,7 +3,7 @@ name: Deploy HTML Banner
 on:
   push:
     branches:
-      - main  # Change this if your main branch has a different name
+      - main  
   pull_request:
     branches:
       - main
@@ -20,4 +20,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./path/to/your/banner  # Update this to the path of your HTML files
+          publish_dir: ./path/to/your/banner  
