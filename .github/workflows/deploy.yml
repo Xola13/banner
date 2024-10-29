@@ -23,3 +23,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./path/to/your/banner
           publish_branch: gh-pages
+     - name: Notify Discord on Failure
+       if: failure()
+       run:
+         curl -X POST -H 'Content-type: application/json' --data '{"content": "Build or deployment failed for <{{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|this run>."}' ${{ secrets.DISCORD_WEBHOOK_URL }}
