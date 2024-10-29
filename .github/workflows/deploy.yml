@@ -3,10 +3,10 @@ name: Deploy HTML Banner
 on:
   push:
     branches:
-      - main  
+      - staging  
   pull_request:
     branches:
-      - main
+      - staging
 
 jobs:
   deploy:
@@ -22,3 +22,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./path/to/your/banner
+          publish_branch: staging
