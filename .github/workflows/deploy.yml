@@ -22,7 +22,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./path/to/your/banner
-          publish_branch: gh-pages
+          publish_branch: staging
 
       - name: Notify Discord on Failure
         if: failure()
